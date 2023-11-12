@@ -87,3 +87,7 @@ body {
 .detail .col img{
   width: 40px;
 }
+.error{
+  margin-top: 20px;
+  text-align: center;
+}
