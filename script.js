@@ -20,6 +20,7 @@ async function getData(cityName) {
   }
 }
 function weather(data) {
+  const celsius= data.main.temp-273.15.toFixed(2);
   function getImg() {
     if (data.weather[0].main == "Rain") {
       return "./images/rain.png";
@@ -34,10 +35,9 @@ function weather(data) {
     }
   }
   const weatherEl = `
-  
       <div class="weather">
         <img src=${getImg()} alt="" class="weather-icon" />
-        <h1 class="temp">${Math.round(data.main.temp)}°C</h1>
+        <h1 class="temp">${Math.round(celsius)}°C</h1>
         <h2 class="city">${data.name}</h2>
         <div class="detail">
           <div class="col">
