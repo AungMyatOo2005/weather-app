@@ -29,7 +29,6 @@ body {
   font-size: 18px;
   background-color: #fff;
   padding: 20px;
-  width: 300px;
   border-radius: 50px;
 }
 .search img {
@@ -67,27 +66,47 @@ body {
   font-weight: 100;
 }
 .detail {
-  padding: 0px 30px;
   margin-top: 60px;
-  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 30px;
 }
 .detail .col > div {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.detail .col{
+.detail .col {
   display: flex;
   align-items: end;
   gap: 20px;
 }
-.detail .col img{
+.detail .col img {
   width: 40px;
 }
-.error{
+.error {
   margin-top: 20px;
   text-align: center;
+}
+@media (max-width: 600px) {
+  .search input {
+    padding: 15px;
+    font-size: 16px;
+  }
+  .search button {
+    width: 50px;
+    height: 50px;
+  }
+  .search img {
+    width: 14px;
+  }
+  .weather-icon {
+    width: 150px;
+  }
+  .temp {
+    font-size: 46px;
+  }
+  .city {
+    font-size: 36px;
+  }
 }
