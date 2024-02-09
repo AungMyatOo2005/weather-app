@@ -6,21 +6,21 @@ async function getData(cityName) {
   const url = `https://api.openweathermap.org/data/2.5/weather?unique=metrixc&q=${cityName}`;
   try {
     const res = await fetch(url + `&appid=${key}`);
-    if (res.ok) {
+    if(res.ok){
       const resData = await res.json();
       weather(resData);
-      console.log(resData);
-    } else {
-      errorCity(cityName);
-      console.log("error at city name");
+      console.log(resData)
+    }else{
+      errorCity(cityName)
+      console.log("error at city name")
     }
   } catch (err) {
     console.log(err.message);
-    failFetch();
+    failFetch()
   }
 }
 function weather(data) {
-  const celsius = data.main.temp - (273.15).toFixed(2);
+  const celsius= data.main.temp-273.15.toFixed(2);
   function getImg() {
     if (data.weather[0].main == "Rain") {
       return "./images/rain.png";
@@ -53,10 +53,9 @@ function weather(data) {
           <p class="wind">${data.wind.speed}km/h</p>
           <p>Wind speed</p>
           </div>
-          
           </div>
-        </div>
-      </div>
+          </div>
+          </div>
           `;
   weatherParent.innerHTML = weatherEl;
 }
@@ -70,9 +69,10 @@ form.addEventListener("submit", (e) => {
   }
 });
 
-function errorCity(city) {
-  weatherParent.innerHTML = `<h1 class="error">${city} is not found</h1>`;
+
+function errorCity(city){
+  weatherParent.innerHTML=`<h1 class="error">${city} is not found</h1>`
 }
-function failFetch() {
+function failFetch(){
   weatherParent.innerHTML = `<h1 class="error">Fail to Fetch</h1>`;
 }

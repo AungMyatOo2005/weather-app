@@ -10,12 +10,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0px 10px;
 }
 .card {
   background: linear-gradient(135deg, #00feba, #5b548a);
   padding: 40px 30px;
   width: 90%;
   max-width: 470px;
+  width: 100%;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -29,6 +31,7 @@ body {
   font-size: 18px;
   background-color: #fff;
   padding: 20px;
+  width: 300px;
   border-radius: 50px;
 }
 .search img {
@@ -49,6 +52,8 @@ body {
   display: flex;
   gap: 20px;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 .weather {
   width: 100%;
@@ -66,10 +71,12 @@ body {
   font-weight: 100;
 }
 .detail {
+  padding: 0px 30px;
   margin-top: 60px;
+  width: 100%;
   display: flex;
   align-items: center;
-  gap: 30px;
+  justify-content: space-evenly;
 }
 .detail .col > div {
   display: flex;
@@ -88,25 +95,14 @@ body {
   margin-top: 20px;
   text-align: center;
 }
-@media (max-width: 600px) {
+
+@media (max-width: 520px) {
   .search input {
-    padding: 12px;
     font-size: 16px;
+    width: 270px;
+    gap: 10px;
   }
-  .search button {
-    width: 40px;
-    height: 40px;
-  }
-  .search img {
-    width: 14px;
-  }
-  .weather-icon {
-    width: 150px;
-  }
-  .temp {
-    font-size: 46px;
-  }
-  .city {
-    font-size: 36px;
+  .card {
+    padding: 20px 10px;
   }
 }
